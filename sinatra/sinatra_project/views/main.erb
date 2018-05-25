@@ -1,0 +1,25 @@
+<html>
+  <head>
+     <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <div>
+    <h1>Caesar Cypher</h1>
+      <form>
+        <input type="text" name="digest" placeholder="message">
+        <select name="shift_factor">
+          <option selected disabled>Shift factor</option>
+          <% (1..25).to_a.each do |i| %>
+            <%= "<option value='#{i}'>#{i}</option>" %>
+          <% end %>
+        </select><br>
+        <input type="radio" name="type" value="encrypt" checked> Encrypt 
+        <input type="radio" name="type" value="decrypt"> Decrypt<br>
+        <input type="submit" value="Cipher">
+      </form>
+      <p>
+      <%= @message %>
+      </p>
+    </div>
+  </body>
+</html>
